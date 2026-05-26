@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Marry Me?</title>
+<style>
+body{
+margin:0;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ffd1dc,#ffc0cb,#ffe4e1);
+}
+.container{text-align:center;}
+h1{color:#ff1493;font-size:50px;}
+p{font-size:22px;color:#444;}
+button{
+padding:15px 30px;
+font-size:22px;
+border:none;
+border-radius:15px;
+cursor:pointer;
+}
+#yes{background:#ff1493;color:white;}
+#no{
+background:#d3d3d3;
+position:absolute;
+}
+#love{
+display:none;
+font-size:28px;
+max-width:700px;
+line-height:1.6;
+color:#ff1493;
+padding:20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>🥺❤️ Will You Marry Me? ❤️🥺</h1>
+<p>My heart already chose you 💖</p>
+
+<button id="yes">YES ❤️</button>
+<button id="no">NO 😅</button>
+
+<div id="love">
+💍❤️<br><br>
+You Said YES 🥹💖<br><br>
+This is the happiest moment of my life ❤️<br><br>
+I promise to love you forever,
+care for you,
+support you,
+and stay beside you forever 🌹✨
+</div>
+</div>
+
+<script>
+const noBtn=document.getElementById('no');
+const yesBtn=document.getElementById('yes');
+const love=document.getElementById('love');
+
+function move(){
+ const x=Math.random()*(window.innerWidth-150);
+ const y=Math.random()*(window.innerHeight-100);
+ noBtn.style.left=x+'px';
+ noBtn.style.top=y+'px';
+}
+
+noBtn.addEventListener('mouseover',move);
+noBtn.addEventListener('touchstart',move);
+
+yesBtn.addEventListener('click',()=>{
+ document.querySelector('h1').style.display='none';
+ document.querySelector('p').style.display='none';
+ yesBtn.style.display='none';
+ noBtn.style.display='none';
+ love.style.display='block';
+});
+</script>
+
+</body>
+</html>
